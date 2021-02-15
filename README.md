@@ -1,4 +1,4 @@
-# Source-Code-Laporan-Praktikum
+# Source-Code-Laporan-Praktikum-2
 gajiperjam = int(input("Masukan gaji yang anda inginkan: "))
 jumlahjamkerja= int(input("Masukan jumlah jam kerja dalam satu minggu: "))
 
