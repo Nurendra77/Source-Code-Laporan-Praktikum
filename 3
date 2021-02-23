@@ -1,0 +1,23 @@
+print("----- Selamat Datang Di Gembila Loka -----")
+try:
+    jumlahtiket= int(input("Masukan jumlah tiket yang dibeli: "))
+    total = jumlahtiket* 5000
+    if jumlahtiket < 10:
+        print("Total bayar:Rp ", total)
+    elif jumlahtiket >= 10 and jumlahtiket <=20:
+        total = total - ( total * 0.01)
+        print("Total bayar: Rp ", total)
+    elif jumlahtiket > 20 and jumlahtiket <= 30:
+        total = total - (total * 0.05)
+        print("Total bayar:Rp ",total)
+    elif jumlahtiket >30:
+        total = total - (total*0.1)
+        print("Total bayar:Rp ",total)
+    uangbayar = int(input("Masukan uang untuk pembayaran: Rp "))
+    uangkembalian= uangbayar-total
+    if uangkembalian >0:
+        print("Total kembalian anda adalah: Rp ", uangkembalian)
+    else:
+        print("Maaf uang anda tidak cukup untuk membayar")
+except:
+    print("Anda salah memasukan input")
