@@ -1,0 +1,23 @@
+def urut(n):
+    nilai = 1
+    angka=[]
+    for j in (range(1,n+1)):
+        nilai = nilai *j
+   
+        angka = angka +[nilai]
+    angka.reverse()
+    return angka
+
+def jejer(e):
+    for i in range (n,0,-1):
+        print(i,end = " ")    
+    return
+
+n = int(input("Masukan input n: "))
+u = urut(n)
+
+for kebawah in u:       #nilai reverse
+    print(kebawah,end=" ")
+    jejer(n)
+    print()
+    n = n-1
