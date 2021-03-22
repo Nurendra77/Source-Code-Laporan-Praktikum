@@ -1,0 +1,23 @@
+def cari(kalimat):
+    totalu=0
+    totalk=0
+    totald=0
+    totalw=0
+    for i in kalimat:
+        if i=="U" or i=="u":
+            totalu = totalu+1
+        elif i=="K" or i =="k":
+            totalk = totalk+1
+        elif i=="D" or i=="d":
+            totald = totald+1
+        elif i=="W" or i=="w":
+            totalw = totalw+1
+        else:
+            pass
+    print("Jumlah U/u: ",totalu)
+    print("Jumlah K/k: ",totalk)
+    print("Jumlah D/d: ",totald)
+    print("Jumlah W/w: ",totalw)
+
+kata = str(input("Masukan input:  "))
+cari(kata)
