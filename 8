@@ -1,0 +1,45 @@
+file = open("soal.txt")
+
+print("nama file1: soal.txt\n")
+x = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+z = []
+z2 = []
+
+for i in file:
+    for j in i:
+        z = z + [j]
+    if z[0] in x:
+        batas_soal = i.find("|")
+        print(i[:batas_soal])
+        jawab = int(input("Jawab: "))
+
+        isisoal = i.rfind("|")
+        kunci = int(i[isisoal + 1:])
+
+        if jawab == kunci:
+            print("Jawaban benar!")
+            print()
+            z = []
+        elif jawab != kunci:
+            print("Jawaban salah!")
+            print()
+            z = []
+    else:
+
+        batas_soal = i.find("|")
+        print(i[:batas_soal])
+        jawab = input("Jawab: ")
+        jawab = jawab.lower()
+
+        isisoal = i.rfind("|")
+        kunci = i[isisoal + 2:]
+        kunci = kunci.lower().strip()
+
+        if jawab in kunci:
+            print("Jawaban benar!")
+            print()
+            z = []
+        elif jawab != kunci:
+            print("Jawaban salah!")
+            print()
+            z = []
