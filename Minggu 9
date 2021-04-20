@@ -1,0 +1,47 @@
+lagi = "y"
+c = 1
+
+data_nama = []
+data_nim = []
+
+print("======= Program Pendataan Mahasiswa FTI =======")
+print()
+
+while lagi=="y":
+    print("Masukan data ke - ",c)
+    nama = input("Masukan nama panggilan : ")
+    nim = int(input("Masukan NIM: "))
+    print()
+    data_nama = data_nama + [nama]
+    data_nim = data_nim + [nim]
+    c = c + 1
+    lagi = input("Input data lagi? (y/n): ")
+
+print("Daftar Mahasiswa")
+print("=====================================================")
+print("No  Nama         NIM      Angkatan      Program Studi       ")
+for i in range(1,len(data_nama)+1):
+    print(i,end="  ")
+    print(data_nama[i-1],end="      ")
+    print(data_nim[i-1],end="     ")
+    
+    nim_ = str(data_nim[i-1])
+    nim_ = nim_[2:4]
+    #print(type(nim_))
+    
+    if nim_ == "19":
+        print("2019",end="        ")
+    elif nim_ == "18":
+        print("2018",end="        ")
+    elif nim_ == "17":
+        print("2017",end="        ")
+    elif nim_ == "16":
+        print("2016",end="        ")
+
+    jur_ = str(data_nim[i-1])
+    jur_ = jur_[:2]
+    if jur_ == "71":
+        print("Informatika")
+    else:
+        print("Sistem Informasi")
+
