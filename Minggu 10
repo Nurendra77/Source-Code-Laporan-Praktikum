@@ -1,0 +1,25 @@
+import string
+kamus = dict()
+
+file= open("puisi.txt")
+for i in file:
+    i = i.strip()
+    print(i)
+print()
+file.close()
+
+file= open("puisi.txt")
+punc = string.punctuation
+kamus = dict()
+for j in file:
+    j = j.strip()
+    for x in j:
+        if x in punc:
+            if x in kamus:
+                kamus[x] += 1
+            else:
+                kamus[x] = 1
+        else:
+            pass
+for hasil in kamus:
+    print(hasil,"=", kamus[hasil])
