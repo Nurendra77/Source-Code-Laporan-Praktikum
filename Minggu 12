@@ -1,0 +1,72 @@
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+n = int(input("Masukan banyak kategori: "))
+print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+kamus = dict()
+
+for i in range(1,n+1):
+    kategori = input("Masukan nama kategori %d: "%i)
+    print("Masukan 5 aplikasi dalam kategori ",kategori)
+
+    app = list()
+    for j in range(5):
+        apps = input("Masukan nama aplikasi: ")
+        app.append(apps)
+    print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
+
+    kamus[kategori] = app
+print(kamus)
+c = list()
+for key in kamus:
+    c.append(set(kamus[key]))
+print(c)
+gabung = set()
+for app in c :
+    for i in app:
+        gabung.add(i)
+print()
+# intersection
+hasil = c[0]
+for i in range(1,len(c)):
+    hasil = hasil & c[i]
+print("Ada di semua kategori")
+print(hasil)
+print()
+
+# difference
+diff = gabung - hasil
+print("Hanya satu kategori")
+print(diff)
+print()
+
+print("App yang muncul tepat di 2 kategori")
+
+awal = 0        # patokan awal
+mulai = 1       # mulai jump
+akhir = n
+jump = 1
+app_2_kat= set()
+spas = " "
+for duakat in range(1,akhir):
+    for inner in range(jump,akhir):
+        uwu = spas,list(c[awal] & c[inner])
+        if len(uwu) == 2:
+            uwu = uwu[1]
+            uwuu = ""
+            for u in uwu:
+                uwuu = uwuu + u
+                
+        elif len(uwu) == 1:
+            uwu = uwu[0]
+            uwuu = ""
+            for u in uwu:
+                uwuu = uwuu + u
+    
+        app_2_kat.add(uwuu)
+        uwuu = ""
+    awal+= 1
+    jump += 1
+for p in app_2_kat:
+    if p =="":
+        pass
+    else:
+        print(p,end=" ")
