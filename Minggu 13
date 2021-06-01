@@ -1,0 +1,10 @@
+def fak2(x):
+    if x == 1:
+        return 1
+    else:
+        return x *fak2(x-1)
+        
+def fak1(n,r):
+    return int(fak2(n)/(fak2(n-r)*fak2(r)))
+
+print(fak1(7,3))
