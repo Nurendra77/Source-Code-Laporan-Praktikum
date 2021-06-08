@@ -1,0 +1,34 @@
+import random
+import re
+def kasino(n):
+    h = random.randint(1,1000)
+    print("Hasil Random Anda: ",h,"\n")
+    c = float()
+    if h>= 1 and h<= 900:
+        print("Anda mendapatkan $0.1")
+        c += 0.1
+    elif h>= 901 and h<= 980:
+        print("Anda mendapatkan $1")
+        c += 0.5
+    elif h> 981 and h>= 990:
+        print("Anda mendapatkan $5")
+        c += 1
+    else:
+        print("Anda mendapatkan $10")
+        c += 10
+    h = re.findall("[369]",str(h))
+    if h :
+        print("   Anda mendapatkan Angka Spesial")
+        c = c + 5
+        print("Anda mendapatkan total $ %.2f"%c)
+
+print("Rentang Random 1-100\n~~~~~~~~~~~~~~~~~~~~~~")
+print("001 - 900  = $0.1")
+print("901 - 980  = $1")
+print("981 - 990  = $5")
+print("991 - 1000 = $10\n~~~~~~~~~~~~~~~~~~~~~~")
+a = input("Ketik \"Mulai\"\n=====: ")
+if a == "Mulai":
+    pass
+else:
+    print("Input yang anda masukan salah !")
